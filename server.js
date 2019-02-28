@@ -30,5 +30,5 @@ app.get('*', (req, res) => {
   res.redirect('/products/1');
 });
 
-app.listen(80);
+app.listen(3000);
 console.log('Listening on localhost:80');
