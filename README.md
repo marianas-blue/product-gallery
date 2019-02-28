@@ -5,7 +5,7 @@ Front End Component adapted from https://github.com/amazonians-110/product-galle
 ## API References
 
 ### CREATE
-For **seller** to create a new listing.
+####For **seller** to create a new listing.
 
 ```js
 POST /api/product
@@ -36,6 +36,7 @@ Request body:
 ```
 
 Response code: 201
+
 Response data:
 ```js
 {
