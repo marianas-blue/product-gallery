@@ -22,7 +22,7 @@ Request body:
 }
 ```
 
-Response code: 201
+Response code: 201 (Created)
 
 Response data:
 ```js
@@ -33,7 +33,7 @@ Response data:
 
 Error: 400
 
-#### For buyer to report a listing.
+#### For buyer to report incorrect product listing.
 
 ```js
 POST /api/product
@@ -63,7 +63,7 @@ Request body:
 }
 ```
 
-Response code: 201
+Response code: 201 (Created)
 
 Response data:
 ```js
@@ -89,7 +89,7 @@ Request body:
 }
 ```
 
-Response code: 200
+Response code: 200 (OK)
 
 Response data:
 ```js
@@ -128,7 +128,7 @@ Request body:
 }
 ```
 
-Response code: 200
+Response code: 200 (OK)
 
 Response data:
 ```js
@@ -157,7 +157,7 @@ Request body:
 }
 ```
 
-Response code: 200
+Response code: 200 (OK)
 
 Response data:
 ```js
@@ -174,3 +174,55 @@ Error: 404
 
 ### UPDATE
 #### For seller to update a product lsting.
+
+```js
+PUT /api/product/:id
+```
+
+Request body:
+```js
+{
+  name: 'Amazon Product 1',
+  category: 'electronics',
+  manufacturer: 'Murazik and Sons',
+  primary_image: 'https://s3.us-east-2.amazonaws.com/product-summary-component/electronics1.jpg',
+  review_one_star_count: 624,
+  review_two_star_count: 639,
+  review_three_star_count: 622,
+  review_four_star_count: 275,
+  review_five_star_count: 251,
+  review_count: 2411,
+  question_count: 216,
+  price: 561,
+  total_price: 571,
+  stock: 5,
+  is_prime: true,
+  description: 'string',
+}
+```
+
+Response code: 200 (OK)
+
+Response data: N/A
+
+Error: 400
+
+### DELETE
+#### For seller to delete a product lsting.
+
+```js
+DELETE /api/product/:id
+```
+
+Response body:
+```js
+{
+  id: 1,
+}
+```
+
+Response code: 200 (OK)
+
+Response data: N/A
+
+Error: 400
