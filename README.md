@@ -8,34 +8,6 @@ Front End Component adapted from https://github.com/amazonians-110/product-galle
 #### For seller to create a new product listing.
 
 ```js
-POST /api/product/:unique_id
-```
-
-Request body:
-```js
-{
-  id: 1,
-  unique_id: 1,
-  problem_section: "Images",
-  issue: "Is not clear",
-  comments: "complaint"
-}
-```
-
-Response code: 201 (Created)
-
-Response data:
-```js
-{
-  unique_id: 1,
-}
-```
-
-Error: 400
-
-#### For buyer to report incorrect product listing.
-
-```js
 POST /api/product
 ```
 
@@ -69,7 +41,35 @@ Response data:
 ```js
 {
   unique_id: 1,
-  name: 'Amazon Product 1',
+}
+```
+
+Error: 400
+
+#### For buyer to report incorrect product listing.
+
+```js
+POST /api/product/:unique_id
+```
+
+Request body:
+```js
+{
+  id: 1,
+  unique_id: 1,
+  problem_section: "Images",
+  issue: "Is not clear",
+  comments: "complaint"
+}
+```
+
+Response code: 201 (Created)
+
+Response data:
+```js
+{
+  unique_id: 1,
+  name: 'Amazon Product 1'
 }
 ```
 
@@ -86,6 +86,7 @@ Request body:
 ```js
 {
   unique_id: 1,
+  name: 'Amazon Product 1'
 }
 ```
 
@@ -118,13 +119,14 @@ Error: 404
 #### For buyer to see a Seller page information.
 
 ```js
-GET /api/product/:unique_id
+GET /api/product/:seller_id
 ```
 
 Request body:
 ```js
 {
   seller_id: 1,
+  seller_name: 'Amazon Seller 1'
 }
 ```
 
@@ -154,6 +156,7 @@ Request body:
 ```js
 {
   id: 1,
+  name: 'Amazon Product 1'
 }
 ```
 
@@ -182,6 +185,8 @@ PUT /api/product/:id
 Request body:
 ```js
 {
+  id: 1,
+  unique_id: 1,
   name: 'Amazon Product 1',
   category: 'electronics',
   manufacturer: 'Murazik and Sons',
@@ -218,6 +223,7 @@ Response body:
 ```js
 {
   id: 1,
+  name: 'Amazon Product 1'
 }
 ```
 
