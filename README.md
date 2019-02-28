@@ -5,7 +5,35 @@ Front End Component adapted from https://github.com/amazonians-110/product-galle
 ## API References
 
 ### CREATE
-#### For **seller** to create a new listing.
+#### For seller to create a new product listing.
+
+```js
+POST /api/product/:unique_id
+```
+
+Request body:
+```js
+{
+  id: 1,
+  unique_id: 1,
+  problem_section: "Images",
+  issue: "Is not clear",
+  comments: "complaint"
+}
+```
+
+Response code: 201
+
+Response data:
+```js
+{
+  unique_id: 1,
+}
+```
+
+Error: 400
+
+#### For buyer to report a listing.
 
 ```js
 POST /api/product
@@ -48,7 +76,7 @@ Response data:
 Error: 400
 
 ### READ
-#### For **buyer** to see basic product information
+#### For buyer to see basic product information.
 
 ```js
 GET /api/product/:unique_id
@@ -87,7 +115,7 @@ Response data:
 
 Error: 404
 
-#### For **buyer** to see basic product information
+#### For buyer to see a Seller page information.
 
 ```js
 GET /api/product/:unique_id
@@ -115,3 +143,34 @@ Response data:
 ```
 
 Error: 404
+
+#### For buyer to see other sellers selling the product.
+
+```js
+GET /api/product/:id
+```
+
+Request body:
+```js
+{
+  id: 1,
+}
+```
+
+Response code: 200
+
+Response data:
+```js
+{
+  [
+    {seller_id: 1, price: 23},
+    {seller_id: 2, price: 25},
+    {seller_id: 3, price: 20}
+  ]
+}
+```
+
+Error: 404
+
+### UPDATE
+#### For seller to update a product lsting.
