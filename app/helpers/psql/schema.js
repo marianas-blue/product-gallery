@@ -8,7 +8,6 @@ module.exports = {
       "name" varchar(100),
       "category" varchar,
       "manufacturer" varchar,
-      "review_count" int,
       "question_count" int,
       "price" int,
       "is_prime" boolean,
@@ -28,6 +27,7 @@ module.exports = {
       review_three_star_count int, 
       review_four_star_count int,
       review_five_star_count int,
+      "review_count" int,
       "product_id" int REFERENCES products(id),
     );
   `,
