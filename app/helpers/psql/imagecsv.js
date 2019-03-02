@@ -12,13 +12,13 @@ function makeImages(writer, callback) {
     do {
       const values = `${generateImage()},${i}\n${generateImage()},${i}\n`;
       i += 1;
-      if (i === 20000000) {
+      if (i === 10000000) {
         writer.write(values, () => callback('success'));
       } else {
         ok = writer.write(values);
       }
-    } while (i <= 20000000 && ok);
-    if (i <= 20000000) {
+    } while (i <= 10000000 && ok);
+    if (i <= 10000000) {
       writer.once('drain', write);
     }
   }
