@@ -17,7 +17,7 @@ module.exports = {
     CREATE TABLE "images" (
       "id" SERIAL PRIMARY KEY,
       "link" varchar,
-      "product_id" int REFERENCES products(id),
+      "product_id" int REFERENCES products(id)
     );
 
     CREATE TABLE "reviews" (
@@ -28,7 +28,7 @@ module.exports = {
       review_four_star_count int,
       review_five_star_count int,
       "review_count" int,
-      "product_id" int REFERENCES products(id),
+      "product_id" int REFERENCES products(id)
     );
   `,
 };
