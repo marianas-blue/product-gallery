@@ -25,13 +25,13 @@ function makeAll(writer, callback) {
 
       const values = `${i}|${generateName(i)}|${generateCategory(i)}|${generateManufacturer(i)}|[${[generateImage(), generateImage()]}]|${reviews.join('|')}|${generateRandomCount()}|${generateRandomCount()}|${generateRandomBoolean()}|${generateDescription()}\n`;
       i += 1;
-      if (i === 10) {
+      if (i === 10000000) {
         writer.write(values, () => callback('success'));
       } else {
         ok = writer.write(values);
       }
-    } while (i <= 10 && ok);
-    if (i <= 10) {
+    } while (i <= 10000000 && ok);
+    if (i <= 10000000) {
       writer.once('drain', write);
     }
   }
