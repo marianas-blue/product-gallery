@@ -15,7 +15,14 @@ function makeProducts(writer, callback) {
   function write() {
     let ok = true;
     do {
-      const values = `${i}|${generateName(i)}|${generateCategory(i)}|${generateManufacturer(i)}|${generateRandomCount()}|${generateRandomCount()}|${generateRandomBoolean()}|${generateDescription()}\n`;
+      const reviews = [];
+      for (let j = 0; j < 5; j += 1) {
+        reviews.push(generateRandomCount());
+      }
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      reviews.push(reviews.reduce(reducer));
+
+      const values = `${generateName(i)}|${generateCategory(i)}|${generateManufacturer(i)}|${reviews.join('|')}|${generateRandomCount()}|${generateRandomCount()}|${generateRandomBoolean()}|${generateDescription() + i}\n`;
       i += 1;
       if (i === 10000000) {
         writer.write(values, () => callback('success'));
@@ -29,7 +36,7 @@ function makeProducts(writer, callback) {
   }
 }
 
-const writer = fs.createWriteStream('../product.csv');
+const writer = fs.createWriteStream('../products.csv');
 
 makeProducts(writer, string => console.log(string));
 

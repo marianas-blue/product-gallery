@@ -24,6 +24,6 @@ function makeImages(writer, callback) {
   }
 }
 
-const writer = fs.createWriteStream('../image.csv');
+const writer = fs.createWriteStream('../images.csv');
 
 makeImages(writer, string => console.log(string));

@@ -21,5 +21,5 @@ module.exports = {
   generateImage: () => faker.image.image(),
   generateRandomCount: () => faker.random.number(1000),
   generateRandomBoolean: () => faker.random.boolean(),
-  generateDescription: () => ("Lorem ipsum dolor amet you probably haven't heard of them ennui raclette VHS irony tumeric pop-up palo santo truffaut yr scenester."),
+  generateDescription: () => ("Lorem ipsum dolor amet you probably haven't heard of product "),
 };
