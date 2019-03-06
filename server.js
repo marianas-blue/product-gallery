@@ -8,9 +8,9 @@ const app = express();
 
 const productRoutes = require('./app/controllers/productRoutes');
 
-const seedScript = require('./app/helpers/seedingScript');
+// const seedScript = require('./app/helpers/seedingScript');
 
-seedScript();
+// seedScript();
 
 app.use(compression());
 app.use(bodyParser.json());

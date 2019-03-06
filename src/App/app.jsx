@@ -65,7 +65,7 @@ export default class App extends React.Component {
           category={product.category}
         />
         <RowContainer>
-          <Gallery images={[product.primary_image]} />
+          <Gallery images={[product.primary_image]} secondary={product.secondary_image} />
           <Summary
             product={product}
           />
