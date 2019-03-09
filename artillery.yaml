@@ -1,0 +1,48 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 120 # total duration in seconds
+      arrivalRate: 600 # number of users arriving per second
+scenarios:
+  - name: "GET request for a product listing by id"
+    weight: 100
+    flow:
+    - get:
+        url: "/api/products/{{$randomNumber(1, 10000000)}}"
+
+  # - name: "POST request to save a product listing"
+  #   weight: 100
+  #   flow:
+  #   - post:
+  #       url: "/api/products"
+  #       json: 
+  #         name: "Product {{$randomNumber(10000000, 11000000)}}"
+  #         category: "electronics"
+  #         manufacturer: "Murazik and Sons"
+  #         primary_image: "http://lorempixel.com/640/480/abstract"
+  #         secondary_image: "http://lorempixel.com/640/480/nightlife"
+  #         price: 100
+  #         is_prime: true
+  #         description: "description string"
+
+  # - name: "PUT request to update a product listing"
+  #   weight: 5
+  #   flow:
+  #   - put:
+  #       url: "/api/products/{{$randomNumber(10000000, 10001000)}}"
+  #       json: 
+  #         name: "Product"
+  #         category: "toys"
+  #         manufacturer: "Irene and Pippy"
+  #         primary_image: "http://lorempixel.com/640/480/people"
+  #         secondary_image: "http://lorempixel.com/640/480/animals"
+  #         price: 500
+  #         is_prime: false
+  #         description: "description string"
+
+  # - name: "DELETE request to delete a product listing"
+  #   weight: 5
+  #   flow:
+  #   - delete:
+  #       url: "/api/products/{{$randomNumber(10000000, 10001000)}}"
+
