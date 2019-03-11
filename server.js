@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -5,6 +6,7 @@ const cors = require('cors');
 const compression = require('compression');
 
 const app = express();
+// app.use(morgan('dev'));
 
 const productRoutes = require('./app/controllers/productRoutes');
 
@@ -31,4 +33,4 @@ app.get('*', (req, res) => {
 });
 
 app.listen(3000);
-console.log('Listening on localhost:80');
+console.log('Listening on localhost:3000');
