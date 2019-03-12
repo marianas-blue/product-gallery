@@ -97,4 +97,7 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# newrelic
+newrelic.js
+
 # End of https://www.gitignore.io/api/node
