@@ -4,6 +4,7 @@
   "description": "A UI clone of the amazon product summary & gallery section on amazon's product page",
   "main": "server.js",
   "scripts": {
+    "postinstall": "npx webpack -w --mode='production' & nodemon server.js",
     "test": "jest --coverage --reporters default jest-stare",
     "start": "node server.js",
     "devStart": "nodemon server.js",
